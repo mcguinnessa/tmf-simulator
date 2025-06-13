@@ -223,4 +223,57 @@ specifications = {
     }
 }
 
+prices = product_offering_prices = {
+    "POP001": {
+        "id": "POP001",
+        "name": "Basic Plan Price",
+        "priceType": "recurring",
+        "price": {
+            "amount": "9.99",
+            "currency": "USD"
+        },
+        "recurringChargePeriod": "month"
+    },
+    "POP002": {
+        "id": "POP002",
+        "name": "Premium Plan Price",
+        "priceType": "recurring",
+        "price": {
+            "amount": "19.99",
+            "currency": "USD"
+        },
+        "recurringChargePeriod": "month"
+    },
+    "POP003": {
+        "id": "POP003",
+        "name": "One-Time Activation Fee",
+        "priceType": "oneTime",
+        "price": {
+            "amount": "29.99",
+            "currency": "USD"
+        }
+    },
+    "POP004": {
+        "id": "POP004",
+        "name": "Discounted Annual Subscription",
+        "priceType": "recurring",
+        "price": {
+            "amount": "99.99",
+            "currency": "USD"
+        },
+        "recurringChargePeriod": "year"
+    },
+    "POP005": {
+        "id": "POP005",
+        "name": "Addon: Extra Data Pack",
+        "priceType": "usage",
+        "price": {
+            "amount": "5.00",
+            "currency": "USD"
+        },
+        "unitOfMeasure": "GB"
+    }
+}
+
+
 

@@ -4,46 +4,47 @@ tmf620_bp = Blueprint('tmf620_bp', __name__)
 from tmf620_data import catalogs
 from tmf620_data import offerings
 from tmf620_data import specifications
+from tmf620_data import prices
 
 #
 # TMF620 Product Catalogue
 #
-# GET /category/{id}?fields=
-# PATCH /category/{id}?fields=
-# GET /category?fields=
-# POST /category?fields=
-# DELETE /category/{id}
-# GET /importJob?fields=
-# POST /importJob?fields=
-# GET /importJob/{id}?fields=
-# DELETE /importJob/{id}
-# GET /exportJob?fields=
-# POST /exportJob?fields=
-# GET /exportJob/{id}?fields=
-# DELETE /exportJob/{id}
-# GET /productCatalog/{id}?fields=
-# PATCH /productCatalog/{id}?fields=
-# DELETE /productCatalog/{id}
+#X GET /category/{id}?fields=
+#X PATCH /category/{id}?fields=
+#X GET /category?fields=
+#X POST /category?fields=
+#X DELETE /category/{id}
+#X GET /importJob?fields=
+#X POST /importJob?fields=
+#X GET /importJob/{id}?fields=
+#X DELETE /importJob/{id}
+#X GET /exportJob?fields=
+#X POST /exportJob?fields=
+#X GET /exportJob/{id}?fields=
+#X DELETE /exportJob/{id}
+#X GET /productCatalog/{id}?fields=
+#X PATCH /productCatalog/{id}?fields=
+#X DELETE /productCatalog/{id}
 # GET /productCatalog?fields=
-# POST /productCatalog?fields=
-# GET /productOffering/{id}?fields=
-# PATCH /productOffering/{id}?fields=
-# DELETE /productOffering/{id}
+#X POST /productCatalog?fields=
+#X GET /productOffering/{id}?fields=
+#X PATCH /productOffering/{id}?fields=
+#X DELETE /productOffering/{id}
 # GET /productOffering?fields=
-# POST /productOffering?fields=
+#X POST /productOffering?fields=
 # GET /productSpecification/{id}?fields=
-# PATCH /productSpecification/{id}?fields=
-# DELETE /productSpecification/{id}
-# GET /productSpecification?fields=
-# POST /productSpecification?fields=
-# GET /productOfferingPrice/{id}?fields=
-# PATCH /productOfferingPrice/{id}?fields=
+#X PATCH /productSpecification/{id}?fields=
+#X DELETE /productSpecification/{id}
+#X GET /productSpecification?fields=
+#X POST /productSpecification?fields=
+#X GET /productOfferingPrice/{id}?fields=
+#X PATCH /productOfferingPrice/{id}?fields=
 # DELETE /productOfferingPrice/{id}
-# GET /productOfferingPrice?fields=
-# POST /productOfferingPrice?fields=
-# POST /hub
-# DELETE /hub
-# POST /client/listener
+#X GET /productOfferingPrice?fields=
+#X POST /productOfferingPrice?fields=
+#X POST /hub
+#X DELETE /hub
+#X POST /client/listener
 
 
 
@@ -54,24 +55,21 @@ def get_product_catalogs():
 
 @tmf620_bp.route('/productOffering', methods=['GET'])
 def get_product_offerings():
-#    catalogs = current_app.config['CATALOGS']
     return jsonify(offerings)
+
+@tmf620_bp.route('/productOfferingPrice/<string:id>', methods=['GET'])
+def get_product_offering_price():
+   spec = prices.get(id)
+   if spec:
+      return jsonify(spec)
+   return jsonify({"error": "Product Offering not found"}), 404
 
 @tmf620_bp.route('/productSpecification/<string:id>', methods=['GET'])
 def get_product_specification(id):
-#    catalogs = current_app.config['CATALOGS']
-#    return jsonify(catalogs)
    spec = specifications.get(id)
    if spec:
       return jsonify(spec)
    return jsonify({"error": "Product Specification not found"}), 404
-
-#@tmf620_bp.route('/productCatalog/<string:id>', methods=['GET'])
-#def get_product_catalog(id):
-#   spec = product_specifications.get(spec_id)
-#   if spec:
-#      return jsonify(spec)
-#   return jsonify({"error": "Product Specification not found"}), 404
 
 
 

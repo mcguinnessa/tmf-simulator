@@ -1,137 +1,160 @@
 product_inventory = {
-    "prod-001": {
-        "id": "prod-001",
-        "name": "4G Data Plan - 10GB",
-        "description": "Monthly 4G data plan with 10GB allowance.",
-        "productOffering": {
-            "id": "1001",
-            "name": "4G Basic Plan"
+    "cust-1001": [
+        {
+            "id": "prod-vn-001",
+            "name": "Private 5G Slice - Factory",
+            "description": "Dedicated 5G network slice for industrial IoT in factory.",
+            "status": "active",
+            "startDate": "2025-02-01T00:00:00Z",
+            "site": "Berlin",
+#            "productOffering": {
+#                "id": "offer-vn-5g-slice",
+#                "name": "Private 5G Slice"
+#            },
+#            "productSpecification": {
+#                "id": "spec-5g-slice",
+#                "name": "5G Network Slice Specification"
+#            },
+#            "productCharacteristic": [
+#                {"name": "Latency", "value": "5ms"},
+#                {"name": "Bandwidth", "value": "500Mbps"},
+#                {"name": "Slice Type", "value": "URLLC"}
+#            ]
+        }
+    ],
+    "cust-1002": [
+        {
+            "id": "prod-vn-002",
+            "name": "Private VPN",
+            "description": "Secure L3 VPN across top secret scheming.",
+            "status": "active",
+            "startDate": "2024-11-15T00:00:00Z",
+            "site": "Liverpool",
+#            "productOffering": {
+#                "id": "offer-vpn",
+#                "name": "Managed VPN Service"
+#            },
+            "productSpecification": {
+                "id": "spec-vpn",
+                "name": "Virtual Private Network Spec"
+            },
+#            "productCharacteristic": [
+#                {"name": "Sites", "value": "2"},
+#                {"name": "Encryption", "value": "AES-256"},
+#                {"name": "Bandwidth", "value": "1000Mbps"}
+#            ]
         },
-        "productSpecification": {
-            "id": "spec-4g-basic",
-            "name": "4G Mobile Specification"
+        {
+            "id": "prod-vn-003",
+            "name": "Enterprise VPN",
+            "description": "Secure L3 VPN across 5 branch offices.",
+            "status": "active",
+            "startDate": "2024-11-15T00:00:00Z",
+            "site": "London",
+#            "productOffering": {
+#                "id": "offer-vpn",
+#                "name": "Managed VPN Service"
+#            },
+#            "productSpecification": {
+#                "id": "spec-vpn",
+#                "name": "Virtual Private Network Spec"
+#            },
+#            "productCharacteristic": [
+#                {"name": "Sites", "value": "5"},
+#                {"name": "Encryption", "value": "AES-256"},
+#                {"name": "Bandwidth", "value": "200Mbps"}
+#            ]
         },
-        "status": "active",
-        "startDate": "2025-01-10T00:00:00Z",
-        "terminationDate": None,
-        "productCharacteristic": [
-            {"name": "Data Allowance", "value": "10GB"},
-            {"name": "Voice Minutes", "value": "500"}
-        ],
-        "relatedParty": [
-            {
-                "role": "Customer",
-                "id": "cust-100",
-                "name": "Alice Example"
-            }
-        ]
-    },
-    "prod-002": {
-        "id": "prod-002",
-        "name": "5G Business Unlimited",
-        "description": "Unlimited 5G data with business priority.",
-        "productOffering": {
-            "id": "1002",
-            "name": "5G Unlimited Plan"
-        },
-        "productSpecification": {
-            "id": "spec-5g-ultra",
-            "name": "5G Network Specification"
-        },
-        "status": "active",
-        "startDate": "2025-04-01T00:00:00Z",
-        "terminationDate": None,
-        "productCharacteristic": [
-            {"name": "Speed Tier", "value": "Max"},
-            {"name": "Priority Access", "value": "Yes"}
-        ],
-        "relatedParty": [
-            {
-                "role": "Customer",
-                "id": "cust-200",
-                "name": "ACME Corp"
-            }
-        ]
-    },
-    "prod-003": {
-        "id": "prod-003",
-        "name": "Fiber 1Gbps Residential",
-        "description": "FTTH broadband at 1Gbps for residential user.",
-        "productOffering": {
-            "id": "1003",
-            "name": "Fiber Home 1Gbps"
-        },
-        "productSpecification": {
-            "id": "spec-fiber1g",
-            "name": "FTTH Broadband Spec"
-        },
-        "status": "active",
-        "startDate": "2024-11-15T00:00:00Z",
-        "terminationDate": None,
-        "productCharacteristic": [
-            {"name": "Bandwidth", "value": "1Gbps"},
-            {"name": "Usage Cap", "value": "Unlimited"}
-        ],
-        "relatedParty": [
-            {
-                "role": "Customer",
-                "id": "cust-300",
-                "name": "Bob Fiber"
-            }
-        ]
-    },
-    "prod-004": {
-        "id": "prod-004",
-        "name": "DSL Basic 20Mbps",
-        "description": "ADSL connection for light home use.",
-        "productOffering": {
-            "id": "1004",
-            "name": "DSL Family Plan"
-        },
-        "productSpecification": {
-            "id": "spec-dsl20mb",
-            "name": "DSL Internet Specification"
-        },
-        "status": "terminated",
-        "startDate": "2023-03-01T00:00:00Z",
-        "terminationDate": "2025-03-01T00:00:00Z",
-        "productCharacteristic": [
-            {"name": "Bandwidth", "value": "20Mbps"},
-            {"name": "Modem Supplied", "value": "Yes"}
-        ],
-        "relatedParty": [
-            {
-                "role": "Customer",
-                "id": "cust-400",
-                "name": "Charlie DSL"
-            }
-        ]
-    },
-    "prod-005": {
-        "id": "prod-005",
-        "name": "Satellite Rural Access",
-        "description": "Satellite internet for rural area with 50GB cap.",
-        "productOffering": {
-            "id": "1005",
-            "name": "Satellite Essentials"
-        },
-        "productSpecification": {
-            "id": "spec-sat-basic",
-            "name": "Satellite Connectivity Spec"
-        },
-        "status": "active",
-        "startDate": "2025-05-20T00:00:00Z",
-        "terminationDate": None,
-        "productCharacteristic": [
-            {"name": "Monthly Cap", "value": "50GB"},
-            {"name": "Latency", "value": "High"}
-        ],
-        "relatedParty": [
-            {
-                "role": "Customer",
-                "id": "cust-500",
-                "name": "RuralNet Solutions"
-            }
-        ]
-    }
+        {
+            "id": "prod-vn-004",
+            "name": "Cloud Interconnect",
+            "description": "Virtual link to AWS VPC via MPLS backbone.",
+            "status": "active",
+            "startDate": "2025-03-10T00:00:00Z",
+            "site": "Frankfurt",
+#            "productOffering": {
+#                "id": "offer-cloud-mpls",
+#                "name": "Cloud MPLS Link"
+#            },
+#            "productSpecification": {
+#                "id": "spec-cloud-interconnect",
+#                "name": "Cloud Interconnect Spec"
+#            },
+#            "productCharacteristic": [
+#                {"name": "Cloud Provider", "value": "AWS"},
+#                {"name": "Throughput", "value": "1Gbps"},
+#                {"name": "Redundancy", "value": "Dual-link"}
+#            ]
+        }
+    ],
+    "cust-1003": [
+        {
+            "id": "prod-vn-004",
+            "name": "SD-WAN Basic",
+            "description": "Software-defined WAN with centralized policy management.",
+            "status": "active",
+            "startDate": "2025-01-05T00:00:00Z",
+            "site": "New York",
+#            "productOffering": {
+#                "id": "offer-sdwan-basic",
+#                "name": "SD-WAN Basic Plan"
+#            },
+#            "productSpecification": {
+#                "id": "spec-sdwan-basic",
+#                "name": "SD-WAN Spec"
+#            },
+#            "productCharacteristic": [
+#                {"name": "Policy Engine", "value": "Cloud-hosted"},
+#                {"name": "Max Sites", "value": "10"},
+#                {"name": "QoS", "value": "Standard"}
+#            ]
+        }
+    ],
+    "cust-1004": [
+        {
+            "id": "prod-vn-005",
+            "name": "Virtual Mobile Network",
+            "description": "MVNO plan with self-managed SIMs and branding.",
+            "status": "active",
+            "startDate": "2024-12-01T00:00:00Z",
+            "site": "Madrid",
+#            "productOffering": {
+#                "id": "offer-vmn",
+#                "name": "Virtual Mobile Network Access"
+#            },
+#            "productSpecification": {
+#                "id": "spec-vmn",
+#                "name": "MVNO Access Specification"
+#            },
+#            "productCharacteristic": [
+#                {"name": "SIMs", "value": "10,000"},
+#                {"name": "Branding", "value": "White-labeled"},
+#                {"name": "Core Access", "value": "Shared"}
+#            ]
+        }
+    ],
+    "cust-1005": [
+        {
+            "id": "prod-vn-006",
+            "name": "Virtual Broadband over Satellite",
+            "description": "Virtual broadband product layered over LEO satellite access.",
+            "status": "active",
+            "startDate": "2025-04-20T00:00:00Z",
+            "site": "Cape Town",
+#            "productOffering": {
+#                "id": "offer-sat-vbb",
+#                "name": "Virtual Satellite Broadband"
+#            },
+#            "productSpecification": {
+#                "id": "spec-sat-vbb",
+#                "name": "Virtual Sat Broadband Spec"
+#            },
+#            "productCharacteristic": [
+#                {"name": "Throughput", "value": "150Mbps"},
+#                {"name": "Beam Type", "value": "Dynamic"},
+#                {"name": "QoS Tier", "value": "Gold"}
+#            ]
+        }
+    ]
 }
+
